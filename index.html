@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Welcome</title>
+</head>
+<body>
+    <script>
+        // Open an about:blank tab
+        const newWindow = window.open('about:blank', '_blank');
+
+        // Load the iframe content after a brief delay
+        setTimeout(function() {
+            if (newWindow) {
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://networkfire.me/rclient4.0/';
+                iframe.style.width = '100%';
+                iframe.style.height = '100vh';
+                iframe.style.border = 'none';
+                newWindow.document.body.appendChild(iframe);
+
+                // Close the original window
+                window.close();
+            }
+        }, 100); // Delayed loading to ensure the initial redirect completes
+    </script>
+</body>
+</html>
